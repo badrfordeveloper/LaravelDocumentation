@@ -1,0 +1,68 @@
+/*================================================================================
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+	Version: 2.0
+	Author: PIXINVENT
+	Author URL: http://www.themeforest.net/user/pixinvent
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN SCSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.logo{
+    height: 65px;
+}
+.card-datatable{
+    overflow: auto;
+}
+
+.header-navbar.fixed-top, .header-navbar.floating-nav
+{
+    left: 320px;
+}
+
+.header-navbar.floating-nav {
+    width: calc(100vw - (100vw - 100%) - calc(2rem * 2) - 320px);
+}
+
+.vertical-layout.vertical-menu-modern.menu-expanded .main-menu  ,.main-menu .navbar-header,.vertical-layout.vertical-menu-modern.menu-collapsed .main-menu.expanded{
+    width: 320px;
+}
+
+html .content {
+    margin-left: 320px;
+}
+
+.main-menu.menu-light .navigation li a {
+    line-height: 2.5;
+}
+
+.vertical-layout.vertical-menu-modern.menu-expanded .main-menu .navigation li.has-sub > a:after {
+    height: 2.2rem;
+}
+
+.vertical-overlay-menu .main-menu, .vertical-overlay-menu.menu-hide .main-menu {
+    width: 320px;
+    left: -320px;
+}
+
+.vertical-overlay-menu.menu-open .main-menu {
+    transform: translate3d(320px, 0, 0);
+}
+
+@media (max-width: 1201px){
+    .header-navbar.fixed-top, .header-navbar.floating-nav {
+        left: 0;
+    }
+
+    .header-navbar.floating-nav {
+        width: calc(100vw - (100vw - 100%) - calc(2rem * 2));
+    }
+
+}
+
+@media (min-width: 992px){
+    .ecommerce-application .product-checkout.list-view.details-order {
+        grid-template-columns: 2fr 2fr;
+    }   
+}
