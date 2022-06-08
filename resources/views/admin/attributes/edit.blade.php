@@ -1,7 +1,6 @@
 
 <x-app-layout>
     @section('style')
-    <link rel="stylesheet" type="text/css" href="{{ asset('app-assets/css/plugins/forms/form-validation.css')}}">
     @endsection
     @if (!Request::ajax() )
     <div class="content-header row">
@@ -32,13 +31,6 @@
                             @csrf
                             @method('PUT')
                             @include('admin.attributes.form')
-                            <div class="form-control-repeater values-by-attribute">
-                                @if ($attribute->type == TYPE_COLOR)
-                                    @include('admin.options.partials.form_color_options')
-                                @else
-                                    @include('admin.options.partials.form_text_options')
-                                @endif
-                            </div>
                             <div class="row">
                                 <div class="col-12 text-center">
                                     <button type="submit" class="btn btn-primary me-1">{{ __('Save') }}</button>
@@ -52,18 +44,5 @@
     </div>
 
     @section('script')
-        <script src="{{ asset('app-assets/vendors/js/forms/validation/jquery.validate.min.js?ver=1.0.0') }}"></script>
-        <script src="{{ asset('app-assets/js/scripts/forms/form-validation.js') }}"></script>
-    @php
-        $counter  = (@$attribute->options->last()->id+1) ?? 1;
-    @endphp
-     <!-- Script Repeter inputs -->
-        @if(!Request::ajax() )
-            @include('admin.attributes.partials.scriptOption')
-        @else
-            <script>
-                counter = {{$counter}};
-            </script>
-        @endif
     @endsection
 </x-app-layout>

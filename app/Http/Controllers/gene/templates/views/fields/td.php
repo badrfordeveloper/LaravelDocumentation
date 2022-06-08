@@ -1,0 +1,2 @@
+                
+                <td>{{ $item->%column% }}</td>

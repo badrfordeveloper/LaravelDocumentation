@@ -1,7 +1,19 @@
+/*=========================================================================================
+    File Name: app-ecommerce.js
+    Description: Ecommerce pages js
+    ----------------------------------------------------------------------------------------
+    Item Name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
 $(function () {
   'use strict';
 
-    var bsStepper = document.querySelectorAll('.bs-stepper'),
+  var quantityCounter = $('.quantity-counter'),
+    CounterMin = 1,
+    CounterMax = 10,
+    bsStepper = document.querySelectorAll('.bs-stepper'),
     checkoutWizard = document.querySelector('.checkout-tab-steps'),
     removeItem = $('.remove-wishlist'),
     moveToCart = $('.move-cart'),
@@ -80,4 +92,26 @@ $(function () {
       });
   }
 
+  // checkout quantity counter
+  if (quantityCounter.length > 0) {
+    quantityCounter
+      .TouchSpin({
+        min: CounterMin,
+        max: CounterMax
+      })
+      .on('touchspin.on.startdownspin', function () {
+        var $this = $(this);
+        $('.bootstrap-touchspin-up').removeClass('disabled-max-min');
+        if ($this.val() == 1) {
+          $(this).siblings().find('.bootstrap-touchspin-down').addClass('disabled-max-min');
+        }
+      })
+      .on('touchspin.on.startupspin', function () {
+        var $this = $(this);
+        $('.bootstrap-touchspin-down').removeClass('disabled-max-min');
+        if ($this.val() == 10) {
+          $(this).siblings().find('.bootstrap-touchspin-up').addClass('disabled-max-min');
+        }
+      });
+  }
 });

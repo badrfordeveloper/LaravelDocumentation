@@ -105,9 +105,9 @@ window.colors = {
     }
 
     // Do not close cart or notification dropdown on click of the items
-    /* $('.dropdown-notification .dropdown-menu, .dropdown-cart .dropdown-menu').on('click', function (e) {
+    $('.dropdown-notification .dropdown-menu, .dropdown-cart .dropdown-menu').on('click', function (e) {
       e.stopPropagation();
-    }); */
+    });
 
     //  Notifications & messages scrollable
     $('.scrollable-container').each(function () {

@@ -9,11 +9,11 @@
         <div class="content-header-left col-md-9 col-12 mb-2">
             <div class="row breadcrumbs-top">
                 <div class="col-12">
-                    <h2 class="content-header-title float-start mb-0">{{ __('Attributes List') }}</h2>
+                    <h2 class="content-header-title float-start mb-0">{{__('List') }} {{ __('attributes') }}</h2>
                     <div class="breadcrumb-wrapper">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ url(BASE_ADMIN_URL) }}">{{ __('Dashboard') }}</a></li>
-                            <li class="breadcrumb-item active"> {{ __('Attributes List') }}</li>
+                            <li class="breadcrumb-item active">{{__('List') }} {{ __('attributes') }}</li>
                         </ol>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                                         <thead>
                                             <tr>
                                                 @foreach ($options->fields as $key => $field )
-                                                    <th>{{ ucfirst(__('labels.'.$field['name'])) }}</th>
+                                                    <th>{{ ucfirst(__($field['name'])) }}</th>
                                                 @endforeach
                                                 <th><i data-feather='settings'></i></th>
                                             </tr>
@@ -54,13 +54,9 @@
             </div>
         </div>
     </div>
-    @include('partials.modal_ajax')
     @include('partials.modal_delete')
 
     @section('script')
-
-    @include('admin.attributes.partials.scriptOption')
-
     <!-- BEGIN: Page JS-->
     <script src="{{ asset('app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js')}}"></script>
     <script src="{{ asset('app-assets/vendors/js/tables/datatable/dataTables.bootstrap5.min.js')}}"></script>

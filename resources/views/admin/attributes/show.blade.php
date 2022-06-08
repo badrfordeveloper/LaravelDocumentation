@@ -1,6 +1,5 @@
 <x-app-layout>
     @section('style')
-    <link rel="stylesheet" type="text/css" href="{{asset('app-assets/css/pages/app-ecommerce-details.css')}}">
     @endsection
     @if (!Request::ajax() )
     <div class="content-header row">
@@ -28,39 +27,10 @@
                         <div class="info-container">
                             <div class="list-unstyled row">
                                 <div class="mb-75 col-6">
-                                    <span class="fw-bolder me-25">{{ __('labels.name') }}</span>
-                                    <span>{{ $attribute->render('name') }}</span>
-                                </div>
-                                <div class="mb-75 col-6">
-                                    <span class="fw-bolder me-25">{{ __('labels.description') }}</span>
-                                    <span>{{ $attribute->render('description') }}</span>
-                                </div>
-                                <div class="mb-75 col-12 ">
-                                    <div class="divider divider-start">
-                                        <div class="divider-text fw-bolder me-25">{{__('Values List')}}</div>
-                                    </div>
-                                    <div class="ecommerce-application">
-                                        <div class="product-color-options">
-                                            <ul class="list-unstyled mb-0">
-                                                @if ($attribute->type == TYPE_COLOR )
-                                                    @foreach ($attribute->options as $option )
-                                                        <li class="d-inline-block">
-                                                            <div class="color-option" style="border-color: {{$option->name}}">
-                                                                <div class="filloption" style="background-color: {{$option->name}}"></div>
-                                                            </div>
-                                                        </li>
-                                                    @endforeach
-                                                    @else
-                                                    @foreach ($attribute->options as $option )
-                                                        <li class="d-inline-block">
-                                                            <span class="badge badge-light-dark p-50">{{$option->name}}</span>
-                                                        </li>
-                                                    @endforeach
-                                                @endif
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+    <span class="fw-bolder me-25">{{ __('name') }}</span>
+    <span>{{ $attribute::getFormattedFieldValue('name',$attribute->name) }}</span>
+</div>
+
                             </div>
                             <div class="d-flex justify-content-center pt-2">
                                 @can('attributes.edit')

@@ -7,7 +7,7 @@
     Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 
-//Dropzone.autoDiscover = false;
+Dropzone.autoDiscover = false;
 
 $(function () {
   'use strict';
@@ -19,6 +19,7 @@ $(function () {
   var acceptFiles = $('#dpz-accept-files');
   var removeThumb = $('#dpz-remove-thumb');
   var removeAllThumbs = $('#dpz-remove-all-thumb');
+
   // Basic example
   singleFile.dropzone({
     paramName: 'file', // The name that will be used to transfer the file
@@ -27,7 +28,7 @@ $(function () {
 
   // Multiple Files
   multipleFiles.dropzone({
-    paramName: 'images', // The name that will be used to transfer the file
+    paramName: 'file', // The name that will be used to transfer the file
     maxFilesize: 0.5, // MB
     clickable: true
   });

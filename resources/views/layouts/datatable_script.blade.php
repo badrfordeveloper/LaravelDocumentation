@@ -1,8 +1,8 @@
 <script>
- var dt_filter="";
-function loadDataTable(){
+    $(function () {
     var isRtl = $('html').attr('data-textdirection') === 'rtl';
     var dt_filter_table = $('.dt-column-search');
+
   // Columns  Search
   // --------------------------------------------------------------------
 
@@ -21,9 +21,7 @@ function loadDataTable(){
       });
     });
 
-     dt_filter = dt_filter_table.DataTable({
-       // scrollX: true,
-       "aaSorting": [],
+    var dt_filter = dt_filter_table.DataTable({
         processing: true,
         serverSide: true,
         ajax: "{{$options->url}}",
@@ -61,11 +59,5 @@ function loadDataTable(){
         $('#delete_form')[0].action = $(this).attr('data-action');
         $('#delete_modal').modal('show');
     });
-
-}
-
-loadDataTable();
-$(document).on('hidden.bs.modal','#view_modal', function () {
-    dt_filter.ajax.reload();
-})
+});
 </script>

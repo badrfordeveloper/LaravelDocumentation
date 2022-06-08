@@ -52,8 +52,7 @@ $(function () {
     var $this = $(this);
     $this.wrap('<div class="position-relative"></div>');
     $this.select2({
-      placeholder: 'Selectionnez un élément',
-      allowClear: true,
+      placeholder: 'Select value',
       dropdownParent: $this.parent()
     });
   });

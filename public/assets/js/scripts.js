@@ -11,7 +11,7 @@
     /**
      * Open modals with ajax content
      */
-     $(document).on("click",'.ajax-modal',function(e) {
+    $('body').on('click', '.ajax-modal', function (e) {
         e.preventDefault();
         var url = $(this).attr('href');
         var _this = $(this);
@@ -21,13 +21,10 @@
             }
         })
         .done(function (data) {
-            $('#view_modal #url-modal').attr('href',url);
             $('#view_modal .modal-content .data-model').html(data);
             $('#view_modal').modal('show');
 
         });
     });
-
-
 
 })(window);

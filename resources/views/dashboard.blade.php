@@ -1,17 +1,39 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+<x-app-layout>
+    @section('style')
+        okkktgtr
+    @endsection
+
+    <div class="content-header row">
+        <div class="content-header-left col-md-9 col-12 mb-2">
+            <div class="row breadcrumbs-top">
+                <div class="col-12">
+                    <h2 class="content-header-title float-start mb-0">Layout Empty</h2>
+                    <div class="breadcrumb-wrapper">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Layouts</a></li>
+                            <li class="breadcrumb-item active">Layout Empty</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="content-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-primary" role="alert">
+                    <div class="alert-body">
+                        <strong>Info:</strong> This layout can be useful for getting started with empty content section. Please check
+                        the&nbsp;<a class="text-primary" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/documentation/documentation-layout-empty.html" target="_blank">Layout empty documentation</a>&nbsp; for more details.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section('script')
+        okkkjjjjjjjjjj
+    @endsection
 </x-app-layout>
