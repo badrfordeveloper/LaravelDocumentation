@@ -44,6 +44,12 @@
     <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">{{ucfirst(__('attributes'))}}</span></a>
 </li>
 @endcan
+@can('tags.list')
+<li><a class="d-flex align-items-center" href="{{ route(BASE_ADMIN_PATH.'.tags.index')}}">
+    <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">{{ucfirst(__('tags'))}}</span></a>
+</li>
+@endcan
+
 
 
 

@@ -3,6 +3,8 @@
 use App\Common;
 use App\Http\Controllers\Admin\xxxxController;
 use App\Http\Controllers\Admin\AttributeController;
+use App\Http\Controllers\Admin\TagController;
+
 
 
 
@@ -30,7 +32,9 @@ Route::get('/dashboard', function () {
 Route::group(['middleware' => ['auth'],'prefix' => BASE_ADMIN_PATH,'as'=>BASE_ADMIN_PATH.'.'], function () {
 
     Route::resource('attributes',AttributeController::class);
+    Route::resource('tags',TagController::class);
 });
+
 
 
 

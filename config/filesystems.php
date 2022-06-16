@@ -56,6 +56,35 @@ return [
             'throw' => false,
         ],
 
+        'app' => [
+            'driver' => 'local',
+            'root' =>app_path(),
+        ],
+        'Http' => [
+            'driver' => 'local',
+            'root' =>app_path('Http'),
+        ],
+        'public_folder' => [
+            'driver' => 'local',
+            'root' =>public_path(),
+        ],
+        'resources' => [
+            'driver' => 'local',
+            'root' =>resource_path(),
+        ],
+        'database' => [
+            'driver' => 'local',
+            'root' =>database_path(),
+        ],
+        'gene' => [
+            'driver' => 'local',
+            'root' =>app_path('Http/Controllers/gene'),
+        ],
+        'route' => [
+            'driver' => 'local',
+            'root' =>base_path('routes'),
+        ],
+
     ],
 
     /*
