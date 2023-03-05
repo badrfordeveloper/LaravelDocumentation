@@ -7,7 +7,7 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionSeeder extends Seeder
 {
-    protected $tables = ['tags'];
+    protected $tables = ['tags','attributes','documents'];
     /**
      * Run the database seeds.
      *

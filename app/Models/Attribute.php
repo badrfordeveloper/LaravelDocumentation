@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\BaseModel;
+use App\Models\Traits\DatatablesTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class Attribute extends BaseModel
 {
-    use SoftDeletes;
+    use SoftDeletes, DatatablesTrait;
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
@@ -17,7 +18,7 @@ class Attribute extends BaseModel
 
     const FIELDS_INFOS = [
         'name' => ["name" => "name", "orderable" => "true","searchable" => "true"],
-		
+
     ];
 
     public static function getFormattedFieldValue($field, $value){

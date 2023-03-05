@@ -44,8 +44,10 @@ Trait DatatablesTrait {
             if(@count($ModelParts) > 1){
                 $slug = implode("-",$ModelParts);
             }
-            $viewActions = view('partials.actions',['item' => $object,'slug'=> $slug])->render();
-            return $viewActions;
+
+            $viewActions = $this->getActionView($model);
+
+            return view($viewActions,['item' => $object,'slug'=> $slug])->render();
         });
         $dataTable = $dataTable->editColumn('shipping_method_id', function($object) use ($model) {
             return $object->render('shipping_method_id');
@@ -76,6 +78,21 @@ Trait DatatablesTrait {
         ->make(true);
 
         return $dataTable;
+    }
+
+    public function getActionView($model){
+        $result = "";
+        switch ($model) {
+            case 'documents':
+                $result = 'partials.actions_documents';
+                break;
+
+            default:
+                $result = 'partials.actions';
+                break;
+        }
+
+        return $result;
     }
 
 }

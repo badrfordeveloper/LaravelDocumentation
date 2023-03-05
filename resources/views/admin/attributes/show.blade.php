@@ -27,9 +27,9 @@
                         <div class="info-container">
                             <div class="list-unstyled row">
                                 <div class="mb-75 col-6">
-    <span class="fw-bolder me-25">{{ __('name') }}</span>
-    <span>{{ $attribute::getFormattedFieldValue('name',$attribute->name) }}</span>
-</div>
+                                    <span class="fw-bolder me-25">{{ __('name') }}</span>
+                                    <span>{{ $attribute::getFormattedFieldValue('name',$attribute->name) }}</span>
+                                </div>
 
                             </div>
                             <div class="d-flex justify-content-center pt-2">

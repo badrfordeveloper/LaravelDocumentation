@@ -33,6 +33,11 @@
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                @can('documents.list')
+<li><a class="d-flex align-items-center" href="{{ route(BASE_ADMIN_PATH.'.documents.index')}}">
+    <i data-feather="book"></i><span class="menu-item text-truncate" data-i18n="Analytics">{{ucfirst(__('documents'))}}</span></a>
+</li>
+@endcan
                 <li class=" nav-item"><a class="d-flex align-items-center" href="index.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">{{__('Settings')}}</span></a>
                     <ul class="menu-content">
 
@@ -49,6 +54,8 @@
     <i data-feather="circle"></i><span class="menu-item text-truncate" data-i18n="Analytics">{{ucfirst(__('tags'))}}</span></a>
 </li>
 @endcan
+
+
 
 
 
